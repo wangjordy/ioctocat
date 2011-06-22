@@ -3,6 +3,7 @@
 #import "GHOrganization.h"
 #import "GHOrganizations.h"
 #import "MyFeedsController.h"
+#import "FeedEntryController.h"
 #import "SynthesizeSingleton.h"
 #import "NSString+Extensions.h"
 #import "NSURL+Extensions.h"
@@ -29,6 +30,28 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(iOctocat);
 		JLog(@"NSZombieEnabled/NSAutoreleaseFreedObjectCheckEnabled enabled!");
 	}
 	self.users = [NSMutableDictionary dictionary];
+    
+    // Prepare ViewControllers for iPad
+    #ifdef IS_IPAD
+    NSMutableArray *controllers = [NSMutableArray arrayWithCapacity:[tabBarController.viewControllers count]];
+    
+    for (NSUInteger i = 0; i < [tabBarController.viewControllers count]; i++) {
+        UINavigationController *tabNavController = [tabBarController.viewControllers objectAtIndex:i];
+        if (i == 0) { // Feeds
+            UISplitViewController *splitViewController = [[[UISplitViewController alloc] init] autorelease];
+            splitViewController.tabBarItem = tabNavController.tabBarItem;
+            FeedEntryController *detailController = [[[FeedEntryController alloc] initWithFeed:nil andCurrentIndex:0] autorelease];
+            UINavigationController *detailNavController = [[[UINavigationController alloc] initWithRootViewController:detailController] autorelease];
+            splitViewController.viewControllers = [NSArray arrayWithObjects:tabNavController, detailNavController, nil];
+            splitViewController.delegate = detailController;
+            [controllers addObject:splitViewController];
+        } else {
+           [controllers addObject:tabNavController]; 
+        }   
+    }
+    tabBarController.viewControllers = controllers;
+    #endif
+    
 	[window addSubview:tabBarController.view];
 	launchDefault = YES;
 	[self performSelector:@selector(postLaunch) withObject:nil afterDelay:0.0];

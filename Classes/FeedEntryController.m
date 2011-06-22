@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	if (feed) self.navigationItem.rightBarButtonItem = controlItem;
-	self.entry = [feed.entries objectAtIndex:currentIndex];
+	[self goToIndex:currentIndex];
     // Background
     UIColor *background = [UIColor colorWithPatternImage:[UIImage imageNamed:@"HeadBackground90.png"]];
     headView.backgroundColor = background;
@@ -81,6 +81,8 @@
 }
 
 - (void)dealloc {
+    if (entry) [entry.user removeObserver:self forKeyPath:kUserGravatarKeyPath];
+    
 	[contentView stopLoading];
 	contentView.delegate = nil;
 	[contentView release], contentView = nil;
@@ -94,14 +96,13 @@
 	[commitItem release], commitItem = nil;
     [organizationItem release], organizationItem = nil;
 	[navigationControl release], navigationControl = nil;
-	[entry.user removeObserver:self forKeyPath:kUserGravatarKeyPath];
 	[entry release], entry = nil;
 	[dateLabel release], dateLabel = nil;
 	[titleLabel release], titleLabel = nil;
 	[iconView release], iconView = nil;
 	[headView release], headView = nil;
 	[gravatarView release], gravatarView = nil;
-	
+    
     [super dealloc];
 }
 
@@ -116,12 +117,17 @@
 	}
 }
 
+- (void)goToIndex:(NSUInteger)theIndex {
+    currentIndex = theIndex;
+    if (entry) [entry.user removeObserver:self forKeyPath:kUserGravatarKeyPath];
+	self.entry = [feed.entries objectAtIndex:currentIndex];
+}
+
 #pragma mark Actions
 
 - (IBAction)segmentChanged:(UISegmentedControl *)segmentedControl {
 	currentIndex += (segmentedControl.selectedSegmentIndex == 0) ? -1 : 1;
-	[entry.user removeObserver:self forKeyPath:kUserGravatarKeyPath];
-	self.entry = [feed.entries objectAtIndex:currentIndex];
+    [self goToIndex:currentIndex];
 }
 
 - (IBAction)showInWebView:(id)sender {

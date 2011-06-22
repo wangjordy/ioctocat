@@ -16,6 +16,7 @@
 }
 
 @property(nonatomic,readonly)GHFeed *currentFeed;
+@property(nonatomic,readonly)UISplitViewController *splitViewController;
 
 - (void)setupFeeds;
 - (BOOL)refreshCurrentFeedIfRequired;

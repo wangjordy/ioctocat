@@ -79,9 +79,26 @@
 	return YES;
 }
 
+- (void)switchToFeed:(GHFeed *)theFeed atIndex:(NSUInteger)theIndex {
+    #ifdef IS_IPAD
+    UINavigationController *detailNavController = [self.splitViewController.viewControllers objectAtIndex:1];
+    FeedEntryController *detailController = [detailNavController.viewControllers objectAtIndex:0];
+    if (detailController.feed != self.currentFeed) {
+        FeedEntryController *entryController = [[FeedEntryController alloc] initWithFeed:self.currentFeed andCurrentIndex:0];
+        [detailNavController setViewControllers:[NSArray arrayWithObject:entryController] animated:NO];
+    } else {
+        [detailController goToIndex:0];
+    }
+    #endif
+}
+
 #pragma mark Actions
 
 - (IBAction)switchChanged:(id)sender {
+    #ifdef IS_IPAD
+    [self switchToFeed:self.currentFeed atIndex:0];
+    #endif
+    
     refreshHeaderView.lastUpdatedDate = self.currentFeed.lastReadingDate;
     [self.tableView reloadData];
     if ([self refreshCurrentFeedIfRequired]) return;
@@ -109,6 +126,9 @@
 			refreshHeaderView.lastUpdatedDate = self.currentFeed.lastReadingDate;
 			[[iOctocat sharedInstance] setLastReadingDate:feed.lastReadingDate forURL:feed.resourceURL];
 			[super dataSourceDidFinishLoadingNewData];
+            #ifdef IS_IPAD
+            [self switchToFeed:self.currentFeed atIndex:0];
+            #endif
 		} else if (feed.error) {
 			[super dataSourceDidFinishLoadingNewData];
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Loading error" message:@"Could not load the feed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -130,6 +150,10 @@
     [self.tableView reloadData];
 }
 
+- (UISplitViewController *)splitViewController {
+    return (UISplitViewController *)self.navigationController.parentViewController;
+}
+
 #pragma mark TableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -148,6 +172,10 @@
     if (cell == nil) {
 		[[NSBundle mainBundle] loadNibNamed:@"FeedEntryCell" owner:self options:nil];
 		cell = feedEntryCell;
+        #ifdef IS_IPAD
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        #endif
 	}
 	GHFeedEntry *theEntry = [self.currentFeed.entries objectAtIndex:indexPath.row];
 	cell.entry = theEntry;
@@ -157,17 +185,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (self.currentFeed.entries.count == 0) return;
+    #ifdef IS_IPAD
+    [self switchToFeed:self.currentFeed atIndex:0];
+    #else
 	FeedEntryController *entryController = [[FeedEntryController alloc] initWithFeed:self.currentFeed andCurrentIndex:indexPath.row];
 	entryController.hidesBottomBarWhenPushed = YES;
 	[self.navigationController pushViewController:entryController animated:YES];
 	[entryController release];
-}
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-	GHFeedEntry *entry = [self.currentFeed.entries objectAtIndex:indexPath.row];
-	UserController *userController = [(UserController *)[UserController alloc] initWithUser:entry.user];
-	[self.navigationController pushViewController:userController animated:YES];
-	[userController release];
+    #endif
 }
 
 #pragma mark Autorotation

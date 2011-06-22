@@ -3,7 +3,7 @@
 
 @class GHFeed, GHFeedEntry;
 
-@interface FeedEntryController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate> {
+@interface FeedEntryController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate, UISplitViewControllerDelegate> {
 	GHFeed *feed;
 	GHFeedEntry *entry;
 	NSUInteger currentIndex;
@@ -30,6 +30,7 @@
 @property(nonatomic,retain)GHFeedEntry *entry;
 
 - (id)initWithFeed:(GHFeed *)theFeed andCurrentIndex:(NSUInteger)theCurrentIndex;
+- (void)goToIndex:(NSUInteger)theIndex;
 - (IBAction)segmentChanged:(UISegmentedControl *)segmentedControl;
 - (IBAction)showInWebView:(id)sender;
 - (IBAction)showRepository:(id)sender;
