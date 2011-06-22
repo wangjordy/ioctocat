@@ -30,6 +30,9 @@
 		6F1DC6440F7E8BDA00FCD26D /* watch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DC6430F7E8BDA00FCD26D /* watch.png */; };
 		6F1DC65A0F7E8D6900FCD26D /* WebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DC6590F7E8D6900FCD26D /* WebView.xib */; };
 		6F1DC6740F7E8E1900FCD26D /* WebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DC6730F7E8E1900FCD26D /* WebController.m */; };
+		6F20115513B1E83F00347408 /* MainWindow-ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F20115313B1E83F00347408 /* MainWindow-ipad.xib */; };
+		6F20117713B1ECE200347408 /* MainWindow-iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F20117513B1ECE200347408 /* MainWindow-iphone.xib */; };
+		6F20117813B1ECE200347408 /* MyFeeds.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F20117613B1ECE200347408 /* MyFeeds.xib */; };
 		6F2C76EC1114EDEF002665DA /* file_added.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F2C76E81114EDEF002665DA /* file_added.png */; };
 		6F2C76ED1114EDEF002665DA /* file_modified.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F2C76E91114EDEF002665DA /* file_modified.png */; };
 		6F2C76EE1114EDEF002665DA /* file_removed.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F2C76EA1114EDEF002665DA /* file_removed.png */; };
@@ -152,10 +155,7 @@
 		6FA92AFF0FACD51A001B1D1D /* Issue.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FA92AFD0FACD51A001B1D1D /* Issue.xib */; };
 		6FA92B1C0FACD648001B1D1D /* issues_closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FA92B1A0FACD648001B1D1D /* issues_closed.png */; };
 		6FA92B1D0FACD648001B1D1D /* issues_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FA92B1B0FACD648001B1D1D /* issues_open.png */; };
-		6FA92B320FACD6EA001B1D1D /* MyFeeds.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FA92B300FACD6EA001B1D1D /* MyFeeds.xib */; };
 		6FA92B4E0FACD7ED001B1D1D /* IssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FA92B4D0FACD7ED001B1D1D /* IssueCell.xib */; };
-		6FB3CBE713977DBE00CB0EAE /* MainWindow-ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB3CBE613977DBE00CB0EAE /* MainWindow-ipad.xib */; };
-		6FB3CBEA13977E4000CB0EAE /* MainWindow-iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB3CBE913977E4000CB0EAE /* MainWindow-iphone.xib */; };
 		6FB3CBF6139780D600CB0EAE /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB3CBF3139780D600CB0EAE /* Icon-iPad.png */; };
 		6FB3CBF7139780D600CB0EAE /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB3CBF4139780D600CB0EAE /* Icon-Small-50.png */; };
 		6FB3CBF8139780D600CB0EAE /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FB3CBF5139780D600CB0EAE /* Icon-Small.png */; };
@@ -258,6 +258,9 @@
 		6F1DC6590F7E8D6900FCD26D /* WebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WebView.xib; path = IBFiles/WebView.xib; sourceTree = "<group>"; };
 		6F1DC6720F7E8E1900FCD26D /* WebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebController.h; sourceTree = "<group>"; };
 		6F1DC6730F7E8E1900FCD26D /* WebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebController.m; sourceTree = "<group>"; };
+		6F20115313B1E83F00347408 /* MainWindow-ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-ipad.xib"; path = "IBFiles/MainWindow-ipad.xib"; sourceTree = "<group>"; };
+		6F20117513B1ECE200347408 /* MainWindow-iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "MainWindow-iphone.xib"; path = "IBFiles/MainWindow-iphone.xib"; sourceTree = SOURCE_ROOT; };
+		6F20117613B1ECE200347408 /* MyFeeds.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyFeeds.xib; path = IBFiles/MyFeeds.xib; sourceTree = SOURCE_ROOT; };
 		6F2C76E81114EDEF002665DA /* file_added.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = file_added.png; path = Images/Icons/file_added.png; sourceTree = "<group>"; };
 		6F2C76E91114EDEF002665DA /* file_modified.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = file_modified.png; path = Images/Icons/file_modified.png; sourceTree = "<group>"; };
 		6F2C76EA1114EDEF002665DA /* file_removed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = file_removed.png; path = Images/Icons/file_removed.png; sourceTree = "<group>"; };
@@ -424,10 +427,7 @@
 		6FA92AFD0FACD51A001B1D1D /* Issue.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Issue.xib; path = IBFiles/Issue.xib; sourceTree = "<group>"; };
 		6FA92B1A0FACD648001B1D1D /* issues_closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = issues_closed.png; path = Images/Icons/issues_closed.png; sourceTree = "<group>"; };
 		6FA92B1B0FACD648001B1D1D /* issues_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = issues_open.png; path = Images/Icons/issues_open.png; sourceTree = "<group>"; };
-		6FA92B300FACD6EA001B1D1D /* MyFeeds.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MyFeeds.xib; path = IBFiles/MyFeeds.xib; sourceTree = "<group>"; };
 		6FA92B4D0FACD7ED001B1D1D /* IssueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = IssueCell.xib; path = IBFiles/IssueCell.xib; sourceTree = "<group>"; };
-		6FB3CBE613977DBE00CB0EAE /* MainWindow-ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-ipad.xib"; path = "IBFiles/iPad/MainWindow-ipad.xib"; sourceTree = "<group>"; };
-		6FB3CBE913977E4000CB0EAE /* MainWindow-iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow-iphone.xib"; sourceTree = "<group>"; };
 		6FB3CBF3139780D600CB0EAE /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = "<group>"; };
 		6FB3CBF4139780D600CB0EAE /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
 		6FB3CBF5139780D600CB0EAE /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
@@ -944,7 +944,7 @@
 		6FB3CBE513977DBC00CB0EAE /* iPad */ = {
 			isa = PBXGroup;
 			children = (
-				6FB3CBE613977DBE00CB0EAE /* MainWindow-ipad.xib */,
+				6F20115313B1E83F00347408 /* MainWindow-ipad.xib */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -952,7 +952,7 @@
 		6FB3CBE813977E4000CB0EAE /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				6FB3CBE913977E4000CB0EAE /* MainWindow-iphone.xib */,
+				6F20117513B1ECE200347408 /* MainWindow-iphone.xib */,
 			);
 			name = iPhone;
 			path = IBFiles/iPhone;
@@ -989,7 +989,7 @@
 				6FB3CBE513977DBC00CB0EAE /* iPad */,
 				6FED82980FACA2AE00BE5C81 /* Cells */,
 				6FE91E180FAD088600749370 /* Login.xib */,
-				6FA92B300FACD6EA001B1D1D /* MyFeeds.xib */,
+				6F20117613B1ECE200347408 /* MyFeeds.xib */,
 				6FCDC66B0FC04F180024E498 /* Feed.xib */,
 				6FA92AFC0FACD51A001B1D1D /* FeedEntry.xib */,
 				6F879A5B0FB611FD00EBD9BD /* Users.xib */,
@@ -1123,7 +1123,6 @@
 				6FA92AFF0FACD51A001B1D1D /* Issue.xib in Resources */,
 				6FA92B1C0FACD648001B1D1D /* issues_closed.png in Resources */,
 				6FA92B1D0FACD648001B1D1D /* issues_open.png in Resources */,
-				6FA92B320FACD6EA001B1D1D /* MyFeeds.xib in Resources */,
 				6FA92B4E0FACD7ED001B1D1D /* IssueCell.xib in Resources */,
 				6FE91E190FAD088600749370 /* Login.xib in Resources */,
 				6F358BFB0FB1EA6F004D2828 /* DefaultGravatar.png in Resources */,
@@ -1206,8 +1205,6 @@
 				6F843156136D53350016E367 /* issue_comment.png in Resources */,
 				6F843157136D53350016E367 /* issue_comment@2x.png in Resources */,
 				E0497E5F13914C89005E2C92 /* RefreshArrow@2x.png in Resources */,
-				6FB3CBE713977DBE00CB0EAE /* MainWindow-ipad.xib in Resources */,
-				6FB3CBEA13977E4000CB0EAE /* MainWindow-iphone.xib in Resources */,
 				6FB3CBF6139780D600CB0EAE /* Icon-iPad.png in Resources */,
 				6FB3CBF7139780D600CB0EAE /* Icon-Small-50.png in Resources */,
 				6FB3CBF8139780D600CB0EAE /* Icon-Small.png in Resources */,
@@ -1225,6 +1222,9 @@
 				FCC2C8D213944DF400C8E10D /* ToolbarDown@2x.png in Resources */,
 				FCC2C8D313944DF400C8E10D /* ToolbarUp.png in Resources */,
 				FCC2C8D413944DF400C8E10D /* ToolbarUp@2x.png in Resources */,
+				6F20115513B1E83F00347408 /* MainWindow-ipad.xib in Resources */,
+				6F20117713B1ECE200347408 /* MainWindow-iphone.xib in Resources */,
+				6F20117813B1ECE200347408 /* MyFeeds.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
